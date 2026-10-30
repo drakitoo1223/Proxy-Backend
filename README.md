@@ -2,9 +2,7 @@
 
 This backend implements the Proxy design pattern for a simulated AI API platform.
 
-URL 
 
-https://vercel.com/david-e689/proxy-backend1
 
 ## Functional requirements covered
 
@@ -63,22 +61,7 @@ The backend runs on port `8080` by default.
 
 ## Deployment
 
-### Railway
-1. Push the repository to GitHub.
-2. Open Railway and create a new project.
-3. Deploy from the backend repository.
-4. Set the startup command:
-
-```bash
-mvn spring-boot:run
-```
-
-5. Set the port to `8080` in your project settings if required.
-
-### Render
-1. Create a new Web Service.
-2. Connect the GitHub repository.
-3. Use the following build command:
+https://vercel.com/david-e689/proxy-backend1
 
 ```bash
 ./mvnw clean install
