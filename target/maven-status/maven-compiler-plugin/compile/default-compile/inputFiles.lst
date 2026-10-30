@@ -1,0 +1,13 @@
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\controller\ProxyController.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\model\DailyUsageRecord.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\model\GenerationRequest.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\model\GenerationResponse.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\model\Plan.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\model\QuotaStatus.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\ProxyPlatformApplication.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\service\IAService.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\service\MockAIGenerationService.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\service\QuotaProxyService.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\service\RateLimitProxyService.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\service\ResetScheduler.java
+C:\Users\labinf3.pasto\Desktop\Proxy-Backend\src\main\java\com\proxy\platform\service\UsageTracker.java

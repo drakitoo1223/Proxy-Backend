@@ -1,42 +1,87 @@
-# Proxy Backend
+# AI Proxy Platform Backend
 
-This backend demonstrates the Proxy design pattern in a practical way.
+This backend implements the Proxy design pattern for a simulated AI API platform.
 
-## Pattern used
+## Functional requirements covered
 
-The application exposes a protected access layer in front of a real service:
+- `IAService` interface defines the generation contract.
+- `MockAIGenerationService` simulates AI text generation with a delay and deterministic output.
+- `RateLimitProxyService` limits requests per minute by user and plan.
+- `QuotaProxyService` validates token quota by month and plan.
+- The request flow passes through the rate limit proxy before the quota proxy.
+- A scheduled task resets the rate-limit window each minute and resets monthly usage on the first day of the month.
 
-- `RealResourceService`: executes the actual business logic.
-- `ProtectedResourceProxy`: controls access, validates permissions, and caches results.
+## Plans
 
-This structure is useful when we need to:
+- FREE: 10 requests/minute, 50,000 tokens/month
+- PRO: 60 requests/minute, 500,000 tokens/month
+- ENTERPRISE: unlimited requests and quota
 
-- restrict access to sensitive data,
-- reduce expensive calls,
-- monitor and log operations,
-- keep the real service independent from the access layer.
+## API endpoints
 
-## Endpoints
+### POST `/api/generate`
+Creates a simulated AI response based on the prompt and user plan.
 
-- `GET /api/health`
-- `GET /api/resources`
-- `GET /api/resources/:id`
+Request body:
 
-## Example access control
-
-Use the request header `x-user-role` with values such as:
-
-- `admin`
-- `member`
-- `guest`
-
-A `guest` user only sees public resources. An `admin` user can view all information.
-
-## Run locally
-
-```bash
-npm install
-npm run dev
+```json
+{
+  "userId": "demo-user",
+  "prompt": "Write a short summary for a software engineer.",
+  "plan": "FREE"
+}
 ```
 
-The API listens by default on port `4000`.
+### GET `/api/quota/status?userId={id}&plan={plan}`
+Returns the current usage state and tokens remaining.
+
+### GET `/api/quota/history?userId={id}`
+Returns the last seven days of usage history.
+
+### POST `/api/quota/update`
+Updates the user plan.
+
+```json
+{
+  "userId": "demo-user",
+  "plan": "PRO"
+}
+```
+
+## Local execution
+
+```bash
+mvn clean install
+mvn spring-boot:run
+```
+
+The backend runs on port `8080` by default.
+
+## Deployment
+
+### Railway
+1. Push the repository to GitHub.
+2. Open Railway and create a new project.
+3. Deploy from the backend repository.
+4. Set the startup command:
+
+```bash
+mvn spring-boot:run
+```
+
+5. Set the port to `8080` in your project settings if required.
+
+### Render
+1. Create a new Web Service.
+2. Connect the GitHub repository.
+3. Use the following build command:
+
+```bash
+./mvnw clean install
+```
+
+4. Use the following start command:
+
+```bash
+java -jar target/proxy-platform-1.0.0.jar
+```

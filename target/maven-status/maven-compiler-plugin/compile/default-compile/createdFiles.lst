@@ -1,0 +1,14 @@
+com\proxy\platform\model\QuotaStatus.class
+com\proxy\platform\service\QuotaProxyService.class
+com\proxy\platform\service\ResetScheduler.class
+com\proxy\platform\service\UsageTracker.class
+com\proxy\platform\controller\ProxyController.class
+com\proxy\platform\service\IAService.class
+com\proxy\platform\model\GenerationRequest.class
+com\proxy\platform\model\Plan.class
+com\proxy\platform\model\GenerationResponse.class
+com\proxy\platform\service\RateLimitProxyService.class
+com\proxy\platform\model\DailyUsageRecord.class
+com\proxy\platform\service\MockAIGenerationService.class
+com\proxy\platform\ProxyPlatformApplication.class
+com\proxy\platform\service\UsageTracker$UserQuotaState.class
