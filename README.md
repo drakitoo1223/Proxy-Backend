@@ -2,6 +2,9 @@
 
 This backend implements the Proxy design pattern for a simulated AI API platform.
 
+URL
+https://proxy-frontend-sepia.vercel.app/
+
 ## Functional requirements covered
 
 - `IAService` interface defines the generation contract.
